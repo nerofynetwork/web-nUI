@@ -1,6 +1,8 @@
-loadStyle("assets/bootstrap/css/bootstrap.min.css");
-loadScript("assets/bootstrap/js/bootstrap.min.js");
-loadStyle("assets/nerofy/css/shared.css");
+const path = "https://nui.nerofy.de/";
+
+loadStyle(path+"assets/bootstrap/css/bootstrap.min.css");
+loadScript(path+"assets/bootstrap/js/bootstrap.min.js");
+loadStyle(path+"assets/nerofy/css/shared.css");
 
 let theme = "default";
 if(localStorage.getItem("style") != null) {
@@ -43,8 +45,8 @@ function loadScript(src) {
 }
 
 function loadBootstrap() {
-    loadScript("assets/popper/dist/umd/popper.min.js");
-    loadScript("assets/bootstrap/js/bootstrap.bundle.min.js");
+    loadScript(path+"assets/popper/dist/umd/popper.min.js");
+    loadScript(path+"assets/bootstrap/js/bootstrap.bundle.min.js");
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
