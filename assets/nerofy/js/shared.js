@@ -3,8 +3,8 @@ loadScript("assets/bootstrap/js/bootstrap.min.js");
 loadStyle("assets/nerofy/css/shared.css");
 
 let theme = "default";
-if(localStorage.getItem("theme") != null) {
-    theme = localStorage.getItem("theme");
+if(localStorage.getItem("style") != null) {
+    theme = localStorage.getItem("style");
 }
 setTheme(theme);
 
@@ -21,7 +21,7 @@ function setTheme(style) {
         theme = "default";
     }
     document.body.setAttribute('data-bs-theme', style);
-    localStorage.setItem("theme", style);
+    localStorage.setItem("style", theme);
 }
 
 
