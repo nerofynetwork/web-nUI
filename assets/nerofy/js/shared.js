@@ -20,6 +20,7 @@ function setTheme(style) {
         }
         theme = "default";
     }
+    connector("theme."+style);
     document.body.setAttribute('data-bs-theme', style);
     localStorage.setItem("style", theme);
 }
@@ -46,6 +47,10 @@ function loadBootstrap() {
     loadScript("assets/bootstrap/js/bootstrap.bundle.min.js");
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}
+
+function connector(cmd) {
+    console.log("[CONNECTOR] "+cmd);
 }
 
 document.addEventListener('DOMContentLoaded', loadBootstrap);
